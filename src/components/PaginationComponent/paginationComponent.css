@@ -3,8 +3,7 @@
   justify-content: space-between;
 }
 .pagination-div {
-  direction: ltr;
-  width: 40%;
-  margin: auto;
+  width: 50%;
+  margin: 2rem auto;
 }
 /* pagination-div */

@@ -1,5 +1,5 @@
 export type PaginationComponentProps = {
-  productsPerPage: number;
-  totalProducts: number;
+  usersPerPage: number;
+  totalUsers: number;
   paginate: (pageNumber: number) => void;
 };
