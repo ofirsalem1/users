@@ -1,8 +1,8 @@
-import { useParams } from 'react-router-dom';
+import { useNavigate, useParams } from 'react-router-dom';
 import { User } from '../table/table.types';
 import './userDetails.css';
-
 const UserDetails = ({ users }: { users: User[] }) => {
+  const navigate = useNavigate();
   const { username } = useParams();
   const firstName = username?.split('.')[0];
   const lastName = username?.split('.')[1];
@@ -43,6 +43,9 @@ const UserDetails = ({ users }: { users: User[] }) => {
           </tbody>
         </table>
       </div>
+      <button className="back-btn" onClick={() => navigate('/')}>
+        Back to all users
+      </button>
     </div>
   );
 };
