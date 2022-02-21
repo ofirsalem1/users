@@ -8,7 +8,7 @@ const Table = ({ users, paginate }: { users: User[]; paginate: (pageNumber: numb
 
   return (
     <div className="table-div">
-      <h1>All users</h1>
+      <h1 className="all-users-head">All users</h1>
       <table id="users">
         <thead>
           <tr>

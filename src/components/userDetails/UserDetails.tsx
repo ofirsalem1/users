@@ -10,7 +10,7 @@ const UserDetails = ({ users }: { users: User[] }) => {
 
   return (
     <div className="user-details-div">
-      <h1>User Details</h1>
+      <h1 className="user-details-head">User Details</h1>
       <div className="card">
         <img src={user?.picture.large} alt="image" />
         <h1>{user?.name.first}</h1>
