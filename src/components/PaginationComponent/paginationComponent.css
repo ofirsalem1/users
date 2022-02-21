@@ -1,0 +1,10 @@
+/* pagination-div */
+.pagination-div > nav > ul {
+  justify-content: space-between;
+}
+.pagination-div {
+  direction: ltr;
+  width: 40%;
+  margin: auto;
+}
+/* pagination-div */

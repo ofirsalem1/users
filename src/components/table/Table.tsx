@@ -1,31 +1,7 @@
 import './table.css';
-import { useEffect, useState } from 'react';
-import axios from 'axios';
+import { User } from './table.types';
 
-interface User {
-  dob: { age: number; date: string };
-  email: string;
-  gender: string;
-  location: any;
-  name: { first: string; last: string };
-  picture: { thumbnail: string };
-}
-
-const Table = () => {
-  const [users, setUsers] = useState<User[] | []>([]);
-  useEffect(() => {
-    axios
-      .get(
-        'https://randomuser.me/api/?page=1&results=10&seed=abc&inc=gender,name,email,dob,picture,location'
-      )
-      .then(res => {
-        setUsers(res.data.results);
-      })
-      .catch(err => {
-        console.log(err);
-      });
-  }, []);
-
+const Table = ({ currentUsers }: { currentUsers: User[] }) => {
   return (
     <div className="table-div">
       <table id="users">
@@ -39,8 +15,8 @@ const Table = () => {
           </tr>
         </thead>
         <tbody>
-          {users.length > 0 &&
-            users.map(user => (
+          {currentUsers.length > 0 &&
+            currentUsers.map(user => (
               <tr>
                 <td>
                   <img src={user.picture.thumbnail} alt="user-pic" />
