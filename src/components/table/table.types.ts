@@ -4,5 +4,5 @@ export interface User {
   gender: string;
   location: any;
   name: { first: string; last: string };
-  picture: { thumbnail: string };
+  picture: { thumbnail: string; large: string };
 }

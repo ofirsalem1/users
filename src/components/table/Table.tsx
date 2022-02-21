@@ -1,35 +1,10 @@
 import PaginationComponent from '../PaginationComponent/PaginationComponent';
 import './table.css';
 import { User } from './table.types';
-import { useState, useEffect } from 'react';
-import axios from 'axios';
 import { useNavigate } from 'react-router-dom';
 
-const Table = () => {
+const Table = ({ users, paginate }: { users: User[]; paginate: (pageNumber: number) => void }) => {
   const navigate = useNavigate();
-
-  const [users, setUsers] = useState<User[]>([] as User[]); // 10 users
-  const [currentPage, setCurrentPage] = useState(1);
-  const [usersPerPage] = useState(10);
-
-  /* Requests 10 users according to page  */
-  useEffect(() => {
-    axios
-      .get(
-        `https://randomuser.me/api/?page=${currentPage}&results=10&seed=abc&inc=gender,name,email,dob,picture,location`
-      )
-      .then(res => {
-        setUsers(res.data.results);
-      })
-      .catch(err => {
-        console.log(err);
-      });
-  }, [currentPage]);
-
-  /* change the current page */
-  const paginate = (pageNumber: number) => {
-    setCurrentPage(pageNumber);
-  };
 
   return (
     <div className="table-div">
@@ -42,7 +17,7 @@ const Table = () => {
             <th>Age </th>
             <th>Gender </th>
             <th>Email </th>
-            <th>Details </th>
+            <th className="details-th">Details </th>
           </tr>
         </thead>
         <tbody>
@@ -62,7 +37,7 @@ const Table = () => {
                 </td>
                 <td>
                   <button
-                    onClick={() => navigate(`/${user.name.first[0]}.${user.name.last}`)}
+                    onClick={() => navigate(`/${user.name.first}.${user.name.last}`)}
                     className="more-details-btn"
                   >
                     <span>More Details </span>
@@ -72,7 +47,7 @@ const Table = () => {
             ))}
         </tbody>
       </table>
-      <PaginationComponent usersPerPage={usersPerPage} totalUsers={100000} paginate={paginate} />
+      <PaginationComponent usersPerPage={10} totalUsers={100000} paginate={paginate} />
     </div>
   );
 };
