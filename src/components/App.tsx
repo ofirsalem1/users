@@ -8,11 +8,12 @@ function App() {
   const [users, setUsers] = useState<User[]>([] as User[]); // all the product
   const [currentPage, setCurrentPage] = useState(1);
   const [usersPerPage] = useState(10);
+  const [loading, setLoading] = useState(false);
 
   useEffect(() => {
     axios
       .get(
-        'https://randomuser.me/api/?page=1&results=10&seed=abc&inc=gender,name,email,dob,picture,location'
+        `https://randomuser.me/api/?page=${currentPage}&results=10&seed=abc&inc=gender,name,email,dob,picture,location`
       )
       .then(res => {
         setUsers(res.data.results);
@@ -20,11 +21,11 @@ function App() {
       .catch(err => {
         console.log(err);
       });
-  }, []);
+  }, [currentPage]);
 
   const indexOfLastUser = currentPage * usersPerPage; // 1 * 4 = 4
   const indexOfFirstUser = indexOfLastUser - usersPerPage; // 4 - 4 = 0
-  const currentUsers = users.slice(indexOfFirstUser, indexOfLastUser); // 0 1 2 3
+  // const currentUsers = users.slice(indexOfFirstUser, indexOfLastUser); // 0 1 2 3
 
   const paginate = (pageNumber: number) => {
     setCurrentPage(pageNumber); // change the current page
@@ -33,10 +34,10 @@ function App() {
   return (
     <div className="App">
       <h1>All users</h1>
-      <Table currentUsers={currentUsers} />
+      <Table currentUsers={users} />
       <PaginationComponent
         productsPerPage={usersPerPage}
-        totalProducts={users.length}
+        totalProducts={100000}
         paginate={paginate}
       />
     </div>

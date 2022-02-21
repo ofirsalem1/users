@@ -16,8 +16,8 @@ const Table = ({ currentUsers }: { currentUsers: User[] }) => {
         </thead>
         <tbody>
           {currentUsers.length > 0 &&
-            currentUsers.map(user => (
-              <tr>
+            currentUsers.map((user, i) => (
+              <tr key={i}>
                 <td>
                   <img src={user.picture.thumbnail} alt="user-pic" />
                 </td>
