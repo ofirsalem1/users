@@ -1,7 +1,7 @@
-import Table from './table/Table';
+import Table from './Table/Table';
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
-import UserDetails from './userDetails/UserDetails';
-import { User } from './table/table.types';
+import UserDetails from './UserDetails/UserDetails';
+import { User } from './Table/table.types';
 import { useState, useEffect } from 'react';
 import axios from 'axios';
 

@@ -2,13 +2,33 @@ import PaginationComponent from '../PaginationComponent/PaginationComponent';
 import './table.css';
 import { User } from './table.types';
 import { useNavigate } from 'react-router-dom';
+import { useEffect, useState } from 'react';
 
 const Table = ({ users, paginate }: { users: User[]; paginate: (pageNumber: number) => void }) => {
   const navigate = useNavigate();
+  const [filteredUsers, setFilteredUsers] = useState<User[]>([]);
+  useEffect(() => {
+    setFilteredUsers(users);
+  }, [users]);
+
+  // filter users by first name , last name, email and age
+  const filterUsers = (event: React.ChangeEvent<HTMLInputElement>) => {
+    const userInput = event.target.value.toLowerCase();
+    const filterUserArr = users.filter(user => {
+      return (
+        user.name.first.toLowerCase().includes(userInput) ||
+        user.name.last.toLowerCase().includes(userInput) ||
+        user.email.toLowerCase().includes(userInput) ||
+        user.dob.age.toString().includes(userInput)
+      );
+    });
+    setFilteredUsers(filterUserArr);
+  };
 
   return (
     <div className="table-div">
       <h1 className="all-users-head">All users</h1>
+      <input type="text" placeholder="Search... 🔎" onChange={filterUsers} />
       <table id="users">
         <thead>
           <tr>
@@ -21,8 +41,8 @@ const Table = ({ users, paginate }: { users: User[]; paginate: (pageNumber: numb
           </tr>
         </thead>
         <tbody>
-          {users.length > 0 &&
-            users.map((user, i) => (
+          {filteredUsers.length > 0 &&
+            filteredUsers.map((user, i) => (
               <tr key={i}>
                 <td>
                   <img src={user.picture.thumbnail} alt="user-pic" />

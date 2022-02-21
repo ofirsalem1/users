@@ -1,5 +1,6 @@
 import { useNavigate, useParams } from 'react-router-dom';
-import { User } from '../table/table.types';
+import Map from '../Map/Map';
+import { User } from '../Table/table.types';
 import './userDetails.css';
 const UserDetails = ({ users }: { users: User[] }) => {
   const navigate = useNavigate();
@@ -43,6 +44,7 @@ const UserDetails = ({ users }: { users: User[] }) => {
           </tbody>
         </table>
       </div>
+      <Map />
       <button className="back-btn" onClick={() => navigate('/')}>
         Back to all users
       </button>

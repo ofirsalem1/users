@@ -1,0 +1,10 @@
+.map-div {
+  font-family: sans-serif;
+  text-align: center;
+  height: 600px;
+  width: 800px;
+}
+
+.marker {
+  height: 35px;
+}
