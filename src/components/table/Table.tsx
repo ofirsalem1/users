@@ -3,10 +3,13 @@ import './table.css';
 import { User } from './table.types';
 import { useNavigate } from 'react-router-dom';
 import { useEffect, useState } from 'react';
+import Box from '@mui/material/Box';
+import TextField from '@mui/material/TextField';
+import AccountCircle from '@mui/icons-material/AccountCircle';
 
 const Table = ({ users, paginate }: { users: User[]; paginate: (pageNumber: number) => void }) => {
   const navigate = useNavigate();
-  const [filteredUsers, setFilteredUsers] = useState<User[]>([]);
+  const [filteredUsers, setFilteredUsers] = useState<User[] | []>([]);
   useEffect(() => {
     setFilteredUsers(users);
   }, [users]);
@@ -28,7 +31,11 @@ const Table = ({ users, paginate }: { users: User[]; paginate: (pageNumber: numb
   return (
     <div className="table-div">
       <h1 className="all-users-head">All users</h1>
-      <input type="text" placeholder="Search... 🔎" onChange={filterUsers} />
+      {/* search input */}
+      <Box sx={{ display: 'block', margin: '1rem auto' }}>
+        <AccountCircle sx={{ color: 'action.active', mr: 1, my: 2.9 }} />
+        <TextField label="Search..." variant="standard" onChange={filterUsers} />
+      </Box>
       <table id="users">
         <thead>
           <tr>
