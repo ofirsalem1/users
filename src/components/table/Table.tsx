@@ -30,7 +30,9 @@ const Table = ({ users, paginate }: { users: User[]; paginate: (pageNumber: numb
 
   return (
     <div className="table-div">
-      <h1 className="all-users-head">All users</h1>
+      <div className="has-animation animation-ltr margin padding animate-in" data-delay="10">
+        <h1 className="all-users-head">All users</h1>
+      </div>
       {/* search input */}
       <Box sx={{ display: 'block', margin: '1rem auto' }}>
         <AccountCircle sx={{ color: 'action.active', mr: 1, my: 2.9 }} />
