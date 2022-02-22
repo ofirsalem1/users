@@ -5,14 +5,29 @@
 }
 .user-details-head {
   color: #99a799;
+  margin-top: auto;
 }
+
+.card-map-div {
+  display: flex;
+  align-content: center;
+  flex-wrap: wrap;
+  align-items: center;
+  border: #99a799 solid 3px;
+  width: 50%;
+  min-width: fit-content;
+  margin: 0 auto;
+  box-shadow: rgba(50, 50, 93, 0.25) 0px 50px 100px -20px, rgba(0, 0, 0, 0.3) 0px 30px 60px -30px,
+    rgba(10, 37, 64, 0.35) 0px -2px 6px 0px inset;
+}
+
 .card {
   background: #d3e4cd;
   box-shadow: 0 5px 5px 5px #e1e1e1;
   max-width: 350px;
   padding: 15px;
   border-radius: 5px;
-  margin: auto;
+  margin: 1rem;
   text-align: center;
 }
 
@@ -37,12 +52,13 @@
   padding: 16px 32px;
   text-align: center;
   font-size: 16px;
-  margin: 1rem auto;
+  margin: 2rem auto;
   opacity: 0.6;
   transition: 0.3s;
   display: inline-block;
   text-decoration: none;
   cursor: pointer;
+  box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
 }
 
 .back-btn:hover {
