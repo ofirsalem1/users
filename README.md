@@ -27,7 +27,8 @@ Display the data as a paginated list or user profile page.
   - **Gender** 👩‍🦰🧑
   - **Age** 👴👶
   - **Button to more details**
-  - **Search input** - **you can search by the following parameters : name, email, age** 🔍
+  - **Search input** - **you can search by the following parameters : name, email and age** 🔍
+  - **Sort button** - **you can sort by the following parameters : first name, last name and age** 🔬
 
 - **In the more details page you will see the following details:**
   - **The user address on a map with a pin** 🗺️
