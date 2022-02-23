@@ -2,7 +2,7 @@
   "name": "users-moveo",
   "version": "0.1.0",
   "private": true,
-  "homepage": "http://ofirsalem1.github.io/react-gh-pages",
+  "homepage": "http://ofirsalem1.github.io/users-moveo",
   "dependencies": {
     "@emotion/react": "^11.8.1",
     "@emotion/styled": "^11.8.1",

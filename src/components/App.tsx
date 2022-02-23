@@ -7,7 +7,9 @@ import axios from 'axios';
 
 function App() {
   const [users, setUsers] = useState<User[]>([] as User[]); // 10 users
-  const [currentPage, setCurrentPage] = useState(1);
+  const [currentPage, setCurrentPage] = useState<number>(
+    localStorage.getItem('currentPage') ? Number(localStorage.getItem('currentPage')) : 1
+  );
 
   /* Requests 10 users according to page  */
   useEffect(() => {
@@ -25,12 +27,13 @@ function App() {
 
   /* change the current page */
   const paginate = (pageNumber: number) => {
+    localStorage.setItem('currentPage', pageNumber.toString());
     setCurrentPage(pageNumber);
   };
 
   return (
     <HashRouter>
-      {/*  <Router> */}
+      {/* <Router> */}
       <div className="App">
         <Routes>
           <Route path="/" element={<Table users={users} paginate={paginate} />} />
