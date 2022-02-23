@@ -26,7 +26,7 @@
   background: #d3e4cd;
   box-shadow: 0 5px 5px 5px #e1e1e1;
   max-width: 350px;
-  padding: 15px;
+  padding: 10px;
   border-radius: 5px;
   margin: 1rem;
   text-align: center;
@@ -44,6 +44,7 @@
   margin: 0 auto;
   border: 1px solid #99a799;
   text-align: left;
+  padding: 3px;
 }
 
 .back-btn {

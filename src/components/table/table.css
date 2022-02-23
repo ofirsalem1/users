@@ -1,6 +1,6 @@
 .table-div {
   width: 70%;
-  margin: 3rem auto;
+  margin: auto;
 }
 
 /* h1 */
@@ -10,6 +10,7 @@
   height: 5rem;
   line-height: 8rem;
   color: #99a799;
+  text-shadow: 2px 2px hsl(0, 0%, 100%);
 }
 .has-animation {
   position: relative;
