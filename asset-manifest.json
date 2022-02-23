@@ -1,13 +1,13 @@
 {
   "files": {
-    "main.css": "/users-moveo/static/css/main.b55327ab.css",
-    "main.js": "/users-moveo/static/js/main.702341d1.js",
+    "main.css": "/users-moveo/static/css/main.7a906319.css",
+    "main.js": "/users-moveo/static/js/main.27520475.js",
     "index.html": "/users-moveo/index.html",
-    "main.b55327ab.css.map": "/users-moveo/static/css/main.b55327ab.css.map",
-    "main.702341d1.js.map": "/users-moveo/static/js/main.702341d1.js.map"
+    "main.7a906319.css.map": "/users-moveo/static/css/main.7a906319.css.map",
+    "main.27520475.js.map": "/users-moveo/static/js/main.27520475.js.map"
   },
   "entrypoints": [
-    "static/css/main.b55327ab.css",
-    "static/js/main.702341d1.js"
+    "static/css/main.7a906319.css",
+    "static/js/main.27520475.js"
   ]
 }
