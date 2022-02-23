@@ -1,5 +1,5 @@
 import Table from './table/Table';
-import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
+import { BrowserRouter as Router, Routes, Route, HashRouter } from 'react-router-dom';
 import UserDetails from './UserDetails/UserDetails';
 import { User } from './table/table.types';
 import { useState, useEffect } from 'react';
@@ -29,14 +29,16 @@ function App() {
   };
 
   return (
-    <Router>
+    <HashRouter>
+      {/*  <Router> */}
       <div className="App">
         <Routes>
           <Route path="/" element={<Table users={users} paginate={paginate} />} />
           <Route path="/:username" element={<UserDetails users={users} />} />
         </Routes>
       </div>
-    </Router>
+      {/* </Router> */}
+    </HashRouter>
   );
 }
 
