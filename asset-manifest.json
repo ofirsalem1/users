@@ -1,13 +1,13 @@
 {
   "files": {
-    "main.css": "/users-moveo/static/css/main.dbac44a4.css",
+    "main.css": "/users-moveo/static/css/main.b55327ab.css",
     "main.js": "/users-moveo/static/js/main.d3bf5cf4.js",
     "index.html": "/users-moveo/index.html",
-    "main.dbac44a4.css.map": "/users-moveo/static/css/main.dbac44a4.css.map",
+    "main.b55327ab.css.map": "/users-moveo/static/css/main.b55327ab.css.map",
     "main.d3bf5cf4.js.map": "/users-moveo/static/js/main.d3bf5cf4.js.map"
   },
   "entrypoints": [
-    "static/css/main.dbac44a4.css",
+    "static/css/main.b55327ab.css",
     "static/js/main.d3bf5cf4.js"
   ]
 }
