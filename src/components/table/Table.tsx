@@ -7,7 +7,15 @@ import Box from '@mui/material/Box';
 import TextField from '@mui/material/TextField';
 import AccountCircle from '@mui/icons-material/AccountCircle';
 
-const Table = ({ users, paginate }: { users: User[]; paginate: (pageNumber: number) => void }) => {
+const Table = ({
+  users,
+  paginate,
+  currentPage,
+}: {
+  users: User[];
+  paginate: (pageNumber: number) => void;
+  currentPage: number;
+}) => {
   const navigate = useNavigate();
   const [filteredUsers, setFilteredUsers] = useState<User[] | []>([]);
   useEffect(() => {
@@ -76,7 +84,12 @@ const Table = ({ users, paginate }: { users: User[]; paginate: (pageNumber: numb
             ))}
         </tbody>
       </table>
-      <PaginationComponent usersPerPage={10} totalUsers={100000} paginate={paginate} />
+      <PaginationComponent
+        usersPerPage={10}
+        totalUsers={100000}
+        paginate={paginate}
+        page={currentPage}
+      />
     </div>
   );
 };

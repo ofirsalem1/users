@@ -36,7 +36,10 @@ function App() {
       {/* <Router> */}
       <div className="App">
         <Routes>
-          <Route path="/" element={<Table users={users} paginate={paginate} />} />
+          <Route
+            path="/"
+            element={<Table users={users} paginate={paginate} currentPage={currentPage} />}
+          />
           <Route path="/:username" element={<UserDetails users={users} />} />
         </Routes>
       </div>
