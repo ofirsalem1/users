@@ -1,9 +1,9 @@
+import { useState, useEffect } from 'react';
+import { Routes, Route, HashRouter } from 'react-router-dom';
+import axios from 'axios';
 import Table from './table/Table';
-import { BrowserRouter as Router, Routes, Route, HashRouter } from 'react-router-dom';
 import UserDetails from './UserDetails/UserDetails';
 import { User } from './table/table.types';
-import { useState, useEffect } from 'react';
-import axios from 'axios';
 
 function App() {
   const [users, setUsers] = useState<User[]>([] as User[]); // 10 users

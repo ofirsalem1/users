@@ -1,7 +1,7 @@
+import './userDetails.css';
 import { useNavigate, useParams } from 'react-router-dom';
 import MapUser from '../Map/MapUser';
 import { User } from '../table/table.types';
-import './userDetails.css';
 
 const UserDetails = ({ users }: { users: User[] }) => {
   const navigate = useNavigate();

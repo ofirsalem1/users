@@ -1,12 +1,12 @@
-import PaginationComponent from '../PaginationComponent/PaginationComponent';
 import './table.css';
-import { TableProps, User } from './table.types';
 import { useNavigate } from 'react-router-dom';
 import { useEffect, useState } from 'react';
 import Box from '@mui/material/Box';
 import TextField from '@mui/material/TextField';
 import AccountCircle from '@mui/icons-material/AccountCircle';
 import { FormControl, InputLabel, MenuItem, Select, SelectChangeEvent } from '@mui/material';
+import PaginationComponent from '../PaginationComponent/PaginationComponent';
+import { TableProps, User } from './table.types';
 
 const Table = ({ users, paginate, currentPage }: TableProps) => {
   const navigate = useNavigate();

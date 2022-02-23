@@ -1,7 +1,6 @@
 import './mapUser.css';
 import openlayers from 'openlayers';
 import { layer, custom, Map, Layers } from 'react-openlayers';
-
 import { transform } from 'ol/proj';
 import * as ol from 'openlayers';
 
