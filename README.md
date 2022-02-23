@@ -1,4 +1,4 @@
-# Users List
+# Users List 👥
 
 Users list Moveo homework - fetch users details from external API,
 Display the data as a paginated list or user profile page.
