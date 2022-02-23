@@ -6,6 +6,7 @@
 .user-details-head {
   color: #99a799;
   margin-top: auto;
+  text-shadow: 2px 2px hsl(0, 0%, 100%);
 }
 
 .card-map-div {
